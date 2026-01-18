@@ -344,10 +344,10 @@ const Index = () => {
           <div className="space-y-6">
             <div className="text-center space-y-4 pb-6">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Справочник норм шума
+                Примерный расчёт шума в режиме онлайн
               </h2>
               <p className="text-lg text-muted-foreground">
-                Ознакомьтесь с допустимыми уровнями шума для разных типов мероприятий
+                Посмотрите, как выглядят показатели шума и сравните их с допустимыми нормами для вашего мероприятия
               </p>
             </div>
 
