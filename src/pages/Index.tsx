@@ -100,18 +100,156 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-4 md:p-8">
-      <div className="max-w-7xl mx-auto space-y-6">
-        <header className="space-y-2">
-          <h1 className="text-4xl font-bold text-foreground">
-            Мониторинг уровня шума
-          </h1>
-          <p className="text-muted-foreground text-lg">
-            Контроль соответствия норм шума от концертов и мероприятий для защиты жителей
-          </p>
-        </header>
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto">
+        <section className="relative bg-gradient-to-br from-primary/5 via-accent/5 to-background px-4 md:px-8 py-16 md:py-24">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <Badge className="mb-4 text-sm px-4 py-1.5" variant="secondary">
+              <Icon name="Shield" size={16} className="mr-2" />
+              Профессиональное решение для организаторов
+            </Badge>
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
+              Замер шума от концертов и мероприятий
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+              Защитите своё мероприятие от штрафов. Контролируйте уровень шума в реальном времени и соблюдайте все нормы
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <button
+                onClick={() => {
+                  setIsMonitoring(true);
+                  document.getElementById('measurement')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:opacity-90 transition-opacity"
+              >
+                Начать измерение бесплатно
+              </button>
+              <button
+                onClick={() => document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-4 bg-secondary text-secondary-foreground rounded-lg font-semibold text-lg hover:opacity-90 transition-opacity"
+              >
+                Узнать больше
+              </button>
+            </div>
+            <div className="grid grid-cols-3 gap-6 pt-12 max-w-2xl mx-auto">
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">0₽</div>
+                <div className="text-sm text-muted-foreground">Бесплатно</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">24/7</div>
+                <div className="text-sm text-muted-foreground">Онлайн</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">5+</div>
+                <div className="text-sm text-muted-foreground">Типов событий</div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <section id="benefits" className="px-4 md:px-8 py-16 bg-muted/30">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Для чего организаторам замерять шум?
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Превышение норм шума — это не только недовольные жители, но и серьёзные финансовые риски
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="border-2 hover:border-primary/50 transition-colors">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center mb-4">
+                    <Icon name="Ban" className="text-destructive" size={24} />
+                  </div>
+                  <CardTitle className="text-xl">Избежать штрафов</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Штраф за нарушение норм шума — до 300 000₽ для юрлиц. Предотвратите превышения до того, как придут жалобы
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 hover:border-primary/50 transition-colors">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Icon name="FileText" className="text-primary" size={24} />
+                  </div>
+                  <CardTitle className="text-xl">Получить разрешения</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Протокол замеров шума — обязательный документ для получения разрешения на массовые мероприятия
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 hover:border-primary/50 transition-colors">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                    <Icon name="Users" className="text-accent" size={24} />
+                  </div>
+                  <CardTitle className="text-xl">Сохранить репутацию</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Жалобы жителей могут привести к запрету на проведение мероприятий в будущем. Контролируйте ситуацию заранее
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 hover:border-primary/50 transition-colors">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center mb-4">
+                    <Icon name="BarChart3" className="text-success" size={24} />
+                  </div>
+                  <CardTitle className="text-xl">Доказать соблюдение норм</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    История замеров — ваша защита при разбирательствах. Докажите, что всё было в пределах норм
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20">
+              <CardContent className="p-8">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="AlertTriangle" className="text-primary" size={32} />
+                  </div>
+                  <div className="flex-1 space-y-2">
+                    <h3 className="text-2xl font-bold">Реальный случай</h3>
+                    <p className="text-muted-foreground">
+                      Московский фестиваль был оштрафован на 250 000₽ за превышение норм шума на 15 дБ. 
+                      Жители записали видео с шумомером, и организаторы проиграли суд. 
+                      <span className="font-semibold text-foreground"> Всего этого можно было избежать с помощью постоянного мониторинга.</span>
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section id="measurement" className="px-4 md:px-8 py-16">
+          <div className="space-y-6">
+
+            <div className="text-center space-y-4 pb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Начните измерение прямо сейчас
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Выберите тип мероприятия и контролируйте уровень шума в реальном времени
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
           <Card className="md:col-span-2">
             <CardHeader>
               <div className="flex items-center justify-between">
@@ -285,9 +423,11 @@ const Index = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
+            </div>
+        </section>
 
-        <Tabs defaultValue="standards" className="w-full">
+        <section className="px-4 md:px-8 py-16 bg-muted/30">
+          <Tabs defaultValue="standards" className="w-full">
           <TabsList className="grid w-full grid-cols-2 max-w-md">
             <TabsTrigger value="standards">Справочник норм</TabsTrigger>
             <TabsTrigger value="info">Информация</TabsTrigger>
@@ -378,6 +518,7 @@ const Index = () => {
             </Card>
           </TabsContent>
         </Tabs>
+        </section>
       </div>
     </div>
   );
