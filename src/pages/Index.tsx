@@ -112,17 +112,14 @@ const Index = () => {
               Замер шума от концертов и мероприятий
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Защитите своё мероприятие от штрафов. Контролируйте уровень шума в реальном времени и соблюдайте все нормы
+              Профессиональные замеры шума аккредитованным оборудованием. Официальный протокол для предоставления в Роспотребнадзор и суды
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <button
-                onClick={() => {
-                  setIsMonitoring(true);
-                  document.getElementById('measurement')?.scrollIntoView({ behavior: 'smooth' });
-                }}
+                onClick={() => document.getElementById('measurement')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:opacity-90 transition-opacity"
               >
-                Начать измерение бесплатно
+                Заказать замер
               </button>
               <button
                 onClick={() => document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' })}
@@ -133,16 +130,16 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-3 gap-6 pt-12 max-w-2xl mx-auto">
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">0₽</div>
-                <div className="text-sm text-muted-foreground">Бесплатно</div>
+                <div className="text-3xl font-bold text-primary">от 27 000₽</div>
+                <div className="text-sm text-muted-foreground">Стоимость замера</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">24/7</div>
-                <div className="text-sm text-muted-foreground">Онлайн</div>
+                <div className="text-3xl font-bold text-primary">24 часа</div>
+                <div className="text-sm text-muted-foreground">Готовность отчёта</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">5+</div>
-                <div className="text-sm text-muted-foreground">Типов событий</div>
+                <div className="text-3xl font-bold text-primary">100%</div>
+                <div className="text-sm text-muted-foreground">Аккредитация</div>
               </div>
             </div>
           </div>
@@ -237,14 +234,120 @@ const Index = () => {
           </div>
         </section>
 
+        <section id="accreditation" className="px-4 md:px-8 py-16 bg-gradient-to-br from-accent/5 to-background">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-4">
+              <Badge className="mb-4 text-sm px-4 py-1.5" variant="default">
+                <Icon name="Award" size={16} className="mr-2" />
+                Официальная аккредитация
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Мы — аккредитованная организация
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Наши замеры имеют юридическую силу и принимаются всеми государственными органами
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="border-2 border-accent/20">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                    <Icon name="CheckCircle" className="text-accent" size={24} />
+                  </div>
+                  <CardTitle>Аккредитация Росаккредитации</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Имеем официальную аккредитацию в национальной системе аккредитации для проведения измерений физических факторов
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-accent/20">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                    <Icon name="FileCheck" className="text-accent" size={24} />
+                  </div>
+                  <CardTitle>Протокол для суда</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Выдаём официальный протокол измерений, который принимается судами, Роспотребнадзором и другими органами как доказательство
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-accent/20">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                    <Icon name="Gauge" className="text-accent" size={24} />
+                  </div>
+                  <CardTitle>Сертифицированное оборудование</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Используем только поверенные шумомеры класса точности 1 с актуальными свидетельствами о поверке
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20">
+              <CardContent className="p-8">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold">Что входит в стоимость замера?</h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3">
+                        <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={20} />
+                        <span className="text-muted-foreground">Выезд специалиста с оборудованием на объект</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={20} />
+                        <span className="text-muted-foreground">Проведение измерений по ГОСТ 23337-2014</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={20} />
+                        <span className="text-muted-foreground">Обработка результатов и составление протокола</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={20} />
+                        <span className="text-muted-foreground">Официальный документ с печатью и подписями</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={20} />
+                        <span className="text-muted-foreground">Консультация по результатам измерений</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="bg-card rounded-xl p-8 space-y-6 border-2">
+                    <div className="text-center space-y-2">
+                      <div className="text-sm text-muted-foreground">Стоимость услуги</div>
+                      <div className="text-5xl font-bold text-primary">от 27 000₽</div>
+                      <div className="text-sm text-muted-foreground">за выезд и протокол</div>
+                    </div>
+                    <button className="w-full px-6 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:opacity-90 transition-opacity">
+                      Заказать замер
+                    </button>
+                    <p className="text-xs text-center text-muted-foreground">
+                      Точная стоимость зависит от удалённости объекта и количества точек измерения
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         <section id="measurement" className="px-4 md:px-8 py-16">
           <div className="space-y-6">
             <div className="text-center space-y-4 pb-6">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Начните измерение прямо сейчас
+                Справочник норм шума
               </h2>
               <p className="text-lg text-muted-foreground">
-                Выберите тип мероприятия и контролируйте уровень шума в реальном времени
+                Ознакомьтесь с допустимыми уровнями шума для разных типов мероприятий
               </p>
             </div>
 
