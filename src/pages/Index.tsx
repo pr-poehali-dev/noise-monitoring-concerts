@@ -239,7 +239,6 @@ const Index = () => {
 
         <section id="measurement" className="px-4 md:px-8 py-16">
           <div className="space-y-6">
-
             <div className="text-center space-y-4 pb-6">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 Начните измерение прямо сейчас
@@ -250,7 +249,7 @@ const Index = () => {
             </div>
 
             <div className="grid gap-6 md:grid-cols-3">
-          <Card className="md:col-span-2">
+              <Card className="md:col-span-2">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
@@ -424,6 +423,7 @@ const Index = () => {
             </CardContent>
           </Card>
             </div>
+          </div>
         </section>
 
         <section className="px-4 md:px-8 py-16 bg-muted/30">
